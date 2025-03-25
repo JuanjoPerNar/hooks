@@ -18,7 +18,7 @@ function App() {
         {pokemonData ? (
           <CharacterCard
             name={pokemonData.name}
-            image={pokemonData.sprites.front_default}
+            image={pokemonData.sprites?.other?.dream_world?.front_default}
           />  
         ) : (
           <p>Cargando</p>
