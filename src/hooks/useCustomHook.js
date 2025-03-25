@@ -9,10 +9,11 @@ const useCustomHook = (url) => {
         const fetchData = async () => {
             try {
                 const response = await fetch(url)
+                if (!response.ok) throw new Error("Error fetching data");
                 const result = await response.json()
                 setData(result)
             } catch (error) {
-                console.error('Error fetching data', error);
+                console.error(error.message);
             }
         }
         fetchData()
